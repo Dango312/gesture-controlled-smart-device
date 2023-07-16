@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 from HomeCommands import *
 
 mp_holistic = mp.solutions.holistic 
-model = load_model('LSTM_Actions20f4Smaller3.h5') 
+model = load_model('ModelDinal.h5') 
 
 all_actions = np.array(['Привет', 'Погода', 'Свет', 'Врач', 'IDLE', 'Синий', 'Красный', 'Жёлтый'])
 
@@ -32,7 +32,7 @@ async def detection():
     threshold = 0.4
 
     cap = cv2.VideoCapture(0)
-    with mp_holistic.Holistic(min_dsetection_confidence=0.9, min_tracking_confidence=0.1) as holistic:
+    with mp_holistic.Holistic(min_detection_confidence=0.9, min_tracking_confidence=0.1) as holistic:
         while cap.isOpened():
             ret, frame = cap.read()
             image, results = mediapipe_detection(frame, holistic)
