@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 from HomeCommands import *
 
 mp_holistic = mp.solutions.holistic 
-model = load_model('ModelDinal.h5') 
+model = load_model('ModelFinal.h5') 
 
 all_actions = np.array(['Привет', 'Погода', 'Свет', 'Врач', 'IDLE', 'Синий', 'Красный', 'Жёлтый'])
 
